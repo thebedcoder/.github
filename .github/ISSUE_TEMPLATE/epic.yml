@@ -1,0 +1,42 @@
+name: Epic
+description: A group of user stories with one goal. Run /pm-plan on it to make the stories.
+labels: ["type:epic", "status:todo"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: The problem and the result for the user.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: The user flows that the epic includes.
+  - type: textarea
+    id: non-goals
+    attributes:
+      label: Non-goals
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance criteria
+      description: Feature-level criteria, numbered FR-1, FR-2, and so on. Stories refer to them in "Implements".
+      value: |
+        - FR-1:
+        - FR-2:
+    validations:
+      required: true
+  - type: input
+    id: spec
+    attributes:
+      label: Spec
+      description: Path to the PRD or spec file, if there is one.
+      placeholder: docs/features/<name>/PRD.md
+  - type: textarea
+    id: stories
+    attributes:
+      label: Stories
+      description: /pm-plan writes the task list of story issues here.
+      value: Filled by /pm-plan.
