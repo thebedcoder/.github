@@ -1,0 +1,57 @@
+name: Bug
+description: Something does not work as it should.
+labels: ["type:bug", "status:todo"]
+body:
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happens
+      description: Tell what you see.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version and platform
+      placeholder: 1.4.0+52, iOS 19.1, iPhone 15
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: "P1: blocks users or loses data. P2: a workaround exists. P3: small effect."
+      options:
+        - P1
+        - P2
+        - P3
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Number them AC-1, AC-2, and so on.
+      value: |
+        - [ ] AC-1: The steps above give the expected result.
+        - [ ] AC-2: A test reproduces the bug and passes after the fix.
+    validations:
+      required: true
