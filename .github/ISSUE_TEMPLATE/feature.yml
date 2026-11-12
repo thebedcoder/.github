@@ -1,0 +1,59 @@
+name: Feature
+description: A user story. The fields are the fields of an agentic-engineering story.
+labels: ["type:feature", "status:todo"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: One sentence in this format.
+      value: "**As a** <user>, **I want** <action> **so that** <benefit>"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: "P1: the MVP. The feature is worth shipping with only the P1 set. P2: completes the feature as specified. P3: wanted, the feature can ship without it."
+      options:
+        - P1
+        - P2
+        - P3
+    validations:
+      required: true
+  - type: input
+    id: implements
+    attributes:
+      label: Implements
+      description: The PRD criteria that this story delivers. Leave it empty when there is no PRD.
+      placeholder: FR-1, FR-3
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: One line for each criterion. Each criterion must be testable. Number them AC-1, AC-2, and so on.
+      value: |
+        - [ ] AC-1:
+        - [ ] AC-2:
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Technical context. Write a dependency as "depends on #N".
+  - type: dropdown
+    id: parallel
+    attributes:
+      label: Parallel
+      options:
+        - yes — no dependency on other stories
+        - no — depends on other stories (see Notes)
+    validations:
+      required: true
+  - type: input
+    id: epic
+    attributes:
+      label: Epic
+      description: The epic issue of this story, if there is one.
+      placeholder: "#12"
